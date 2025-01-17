@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://blj7r7te4kvko"]
+
+[ext_resource type="PackedScene" uid="uid://d052uqbj1gp4q" path="res://objects/platfor.tscn" id="1_yejs0"]
+[ext_resource type="PackedScene" uid="uid://cgakmexduxc7o" path="res://objects/dino.tscn" id="2_smp8k"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Platfor" parent="." instance=ExtResource("1_yejs0")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.953433, 0.301605, 0, -0.301605, 0.953433, 0, 6.18477, 10.0784)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.809468, 0.587164, 0, -0.587164, 0.809468, 0, 7.71299, 10.9459)
+
+[node name="Dino" parent="." instance=ExtResource("2_smp8k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.88957, 0)

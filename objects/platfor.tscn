@@ -1,6 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://d052uqbj1gp4q"]
+[gd_scene load_steps=9 format=3 uid="uid://d052uqbj1gp4q"]
 
 [ext_resource type="Script" path="res://Script/platfor.gd" id="1_oexve"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r5mds"]
 
 [sub_resource type="Gradient" id="Gradient_fdbd7"]
 offsets = PackedFloat32Array(0, 0.491803, 1)
@@ -26,6 +28,7 @@ size = Vector3(150, 1, 10)
 [node name="Platfor" type="RigidBody3D"]
 axis_lock_linear_y = true
 axis_lock_angular_y = true
+physics_material_override = SubResource("PhysicsMaterial_r5mds")
 can_sleep = false
 lock_rotation = true
 script = ExtResource("1_oexve")
@@ -36,3 +39,4 @@ mesh = SubResource("BoxMesh_yfili")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_uwehg")
+metadata/Speed = 0.5

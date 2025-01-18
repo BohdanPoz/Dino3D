@@ -3,13 +3,14 @@
 [ext_resource type="Script" path="res://Script/dino.gd" id="1_ov4av"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_tjurq"]
+radius = 0.25
+height = 1.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0gxud"]
+radius = 0.25
+height = 1.0
 
 [node name="Dino" type="CharacterBody3D"]
-transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
-axis_lock_linear_x = true
-axis_lock_angular_x = true
 script = ExtResource("1_ov4av")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]

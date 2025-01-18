@@ -1,4 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://e8wlyt7k8epi"]
+[gd_scene load_steps=5 format=3 uid="uid://e8wlyt7k8epi"]
+
+[ext_resource type="Script" path="res://Script/barrier.gd" id="1_yv1g2"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gcf7d"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xerm0"]
 size = Vector3(0.5, 1, 0.5)
@@ -7,6 +11,12 @@ size = Vector3(0.5, 1, 0.5)
 size = Vector3(0.5, 1, 0.5)
 
 [node name="Barrier" type="RigidBody3D"]
+mass = 5.968
+physics_material_override = SubResource("PhysicsMaterial_gcf7d")
+gravity_scale = 2.103
+lock_rotation = true
+script = ExtResource("1_yv1g2")
+metadata/SPEED = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_xerm0")

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://btqjd0sehqkgw"]
+
+[ext_resource type="Script" path="res://Script/spawner_barrier.gd" id="1_68q88"]
+
+[sub_resource type="Curve3D" id="Curve3D_d47gw"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 150, 0.5, 0, 100, 0.5, 0),
+"tilts": PackedFloat32Array(0)
+}
+point_count = 1
+
+[node name="SpawnerBarrier" type="Node"]
+script = ExtResource("1_68q88")
+
+[node name="PathSpawn" type="Path3D" parent="."]
+curve = SubResource("Curve3D_d47gw")
+
+[node name="LocalSpawn" type="PathFollow3D" parent="PathSpawn"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
+h_offset = 50.0
+rotation_mode = 0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

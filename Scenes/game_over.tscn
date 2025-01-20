@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://cli82g33js2nv"]
+
+[ext_resource type="Script" path="res://Script/game_over.gd" id="1_mkwg8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bppj"]
+font_size = 64
+font_color = Color(1, 0, 0, 1)
+
+[node name="GameOvers" type="CanvasLayer"]
+script = ExtResource("1_mkwg8")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 650.0
+offset_top = 175.0
+offset_right = 1050.0
+offset_bottom = 263.0
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_1bppj")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+offset_left = 800.0
+offset_top = 377.0
+offset_right = 900.0
+offset_bottom = 417.0
+text = "RESET"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

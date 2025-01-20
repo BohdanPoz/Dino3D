@@ -4,6 +4,9 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r5mds"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_uwehg"]
+size = Vector3(50, 1, 5)
+
 [sub_resource type="Gradient" id="Gradient_fdbd7"]
 offsets = PackedFloat32Array(0, 0.491803, 1)
 colors = PackedColorArray(0, 0, 1, 1, 0, 0.709804, 0, 1, 1, 1, 0, 1)
@@ -20,10 +23,7 @@ albedo_color = Color(0, 1, 1, 1)
 albedo_texture = SubResource("NoiseTexture2D_f2rtn")
 
 [sub_resource type="BoxMesh" id="BoxMesh_yfili"]
-size = Vector3(150, 1, 10)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_uwehg"]
-size = Vector3(150, 1, 10)
+size = Vector3(50, 1, 5)
 
 [node name="Platfor" type="RigidBody3D"]
 axis_lock_linear_y = true
@@ -33,10 +33,10 @@ can_sleep = false
 lock_rotation = true
 script = ExtResource("1_oexve")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_bp5m2")
-mesh = SubResource("BoxMesh_yfili")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionPlatform" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_uwehg")
 metadata/Speed = 0.5
+
+[node name="MeshPlatform" type="MeshInstance3D" parent="."]
+material_override = SubResource("StandardMaterial3D_bp5m2")
+mesh = SubResource("BoxMesh_yfili")

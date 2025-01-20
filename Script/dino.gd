@@ -13,3 +13,11 @@ func _physics_process(delta: float) -> void:
 		velocity.y = JUMP_VELOCITY
 
 	move_and_slide()
+	
+func gameOver():
+	get_tree().change_scene_to_file("res://Scenes/game_over.tscn")
+	
+func _on_child_entered_tree(node: Node) -> void:
+	print(node.name, "=========")
+	if node.is_in_group("Barrier"):
+		gameOver()

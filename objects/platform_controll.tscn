@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6vhqh7w0wrvy"]
+
+[ext_resource type="Script" path="res://Script/platform_controll.gd" id="1_35nbi"]
+[ext_resource type="PackedScene" uid="uid://d052uqbj1gp4q" path="res://objects/platfor.tscn" id="1_bwq4d"]
+
+[node name="PlatformControll" type="Node"]
+script = ExtResource("1_35nbi")
+
+[node name="Platfor" parent="." instance=ExtResource("1_bwq4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+
+[node name="Platfor2" parent="." instance=ExtResource("1_bwq4d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, -0.5, 0)

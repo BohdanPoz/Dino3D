@@ -11,10 +11,15 @@ radius = 0.25
 height = 1.0
 
 [node name="Dino" type="CharacterBody3D"]
+disable_mode = 2
+axis_lock_linear_x = true
 script = ExtResource("1_ov4av")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionDino" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_tjurq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshDino" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_0gxud")
+
+[connection signal="child_entered_tree" from="." to="." method="_on_child_entered_tree"]
+[connection signal="child_entered_tree" from="CollisionDino" to="." method="_on_collision_shape_3d_child_entered_tree"]

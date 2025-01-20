@@ -13,3 +13,16 @@ config_version=5
 config/name="Dino3D"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Global="*res://Script/Global.gd"
+
+[display]
+
+window/size/viewport_width=1600
+window/size/viewport_height=900
+
+[global_group]
+
+Barrier=""
